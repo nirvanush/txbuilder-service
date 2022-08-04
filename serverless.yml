@@ -1,0 +1,40 @@
+service: wallet-service
+useDotenv: true
+
+custom:
+  profiles:
+    dev: sigmavalley-api
+    prod: sigmavalley-api
+  stage: ${opt:stage, 'offline'}
+  profile: sigmavalley-api
+  region: ${opt:region, 'us-east-1'}
+
+  serverless-offline:
+    httpPort: 3000
+    noPrependStageInUrl: true
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  memorySize: 512
+  timeout: 20
+  logRetentionInDays: 90
+  logs:
+    httpApi: true
+  httpApi:
+    cors: true
+
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: '/kaching-wallet'
+          method: 'POST'
+
+package:
+  individually: true
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline

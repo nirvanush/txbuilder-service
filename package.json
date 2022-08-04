@@ -1,0 +1,24 @@
+{
+  "name": "wallet-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development sls offline start --stage offline --lambdaPort 3003",
+    "tail-log": "sls logs -f app -t  --stage prod --aws-profile sigmavalley-api",
+    "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage prod --aws-profile sigmavalley-api",
+    "remove-prod": "sls remove --stage prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "isomorphic-wallet": "^0.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "serverless-dotenv-plugin": "^4.0.2",
+    "serverless-offline": "^9.1.4"
+  }
+}
