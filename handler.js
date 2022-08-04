@@ -1,5 +1,6 @@
 'use strict';
 const ErgoWallet = require('isomorphic-wallet').default;
+const Transaction = require('ergoscript').default;
 
 module.exports.handler = async (event) => {
   const apiToken = event.headers['x-api-key'];
@@ -11,15 +12,17 @@ module.exports.handler = async (event) => {
     };
   }
 
-  const { body: unsignedTx } = event;
-  console.log('received-body', unsignedTx);
-
+  const { config } = JSON.parse(event.body);
+  console.log('received-body', config);
   const mintWallet = await new ErgoWallet().fromMnemonics(process.env.SEED || '');
 
   mintWallet.setPublicAddress(process.env.PK);
 
+  const unsignedTx = await (new Transaction(config, { wallet: mintWallet })).build();
+
+
   try {
-    const signedTx = await mintWallet.sign_tx(JSON.parse(unsignedTx));
+    const signedTx = await mintWallet.sign_tx(unsignedTx.toJSON());
     const hash = await mintWallet.submit_tx(signedTx);
 
     return {
