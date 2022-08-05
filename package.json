@@ -4,9 +4,9 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development sls offline start --stage offline --lambdaPort 3003",
-    "tail-log": "sls logs -f app -t  --stage prod --aws-profile your_user",
-    "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage prod --aws-profile your_user",
+    "dev": "cross-env NODE_ENV=development sls offline start --stage offline --lambdaPort 3003",
+    "tail-log": "sls logs -f app -t  --stage prod --aws-profile sigmavalley-api",
+    "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage prod --aws-profile sigmavalley-api",
     "remove-prod": "sls remove --stage prod"
   },
   "keywords": [],
@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "ergoscript": "^0.1.6",
+    "ergoscript-nodejs": "^0.1.7",
     "isomorphic-wallet": "^0.1.0"
   },
   "devDependencies": {

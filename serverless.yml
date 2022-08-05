@@ -1,16 +1,16 @@
-service: your_service
+service: dappstep-api
 useDotenv: true
 
 custom:
   profiles:
-    dev: your_user
-    prod: your_user
+    dev: sigmavalley-api
+    prod: sigmavalley-api
   stage: ${opt:stage, 'offline'}
-  profile: your_user
+  profile: sigmavalley-api
   region: ${opt:region, 'us-east-1'}
 
   serverless-offline:
-    httpPort: 5000
+    httpPort: 3000
     noPrependStageInUrl: true
 
 provider:

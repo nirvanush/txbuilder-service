@@ -1,6 +1,6 @@
 'use strict';
 const ErgoWallet = require('isomorphic-wallet').default;
-const Transaction = require('ergoscript').default;
+const Transaction = require('ergoscript-nodejs').default;
 
 module.exports.txBuilder = async (event) => {
   const apiToken = event.headers['x-api-key'];
