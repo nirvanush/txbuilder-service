@@ -10,7 +10,7 @@ custom:
   region: ${opt:region, 'us-east-1'}
 
   serverless-offline:
-    httpPort: 5000
+    httpPort: 5008
     noPrependStageInUrl: true
 
 provider:
