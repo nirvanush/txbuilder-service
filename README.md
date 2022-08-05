@@ -1,4 +1,4 @@
-# Lite weight javascript service to build transaction
+# Lite weight nodejs service to build transaction
 
 Can run on aws serverless lambda or on a server with `npm run dev`;
 I suggest trying lambda because it's free.
