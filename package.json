@@ -4,7 +4,7 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development sls offline start --stage offline --lambdaPort 3003",
+    "start": "cross-env NODE_ENV=development sls offline start --stage offline --lambdaPort 3003",
     "tail-log": "sls logs -f app -t  --stage prod --aws-profile your_user",
     "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage prod --aws-profile your_user",
     "remove-prod": "sls remove --stage prod"

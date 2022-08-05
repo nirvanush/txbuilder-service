@@ -14,6 +14,8 @@ git clone https://github.com/nirvanush/txbuilder-service
 cd txbuilder-service
 npm i 
 npm run start
+
+Will run on port 5000
 ```
 
 ### TODO:
