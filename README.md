@@ -5,7 +5,7 @@ I suggest trying lambda because it's free.
 
 ### Based on: 
 - [ergoscript.js](https://github.com/nirvanush/ergoscript) - transaction builder library
-- [isomorphic-wallet] - in code wallet with same api as dapp connector.
+- [isomorphic-wallet](https://github.com/nirvanush/isomorphic-wallet) - in code wallet with same api as dapp connector.
 
 
 ## How to start
