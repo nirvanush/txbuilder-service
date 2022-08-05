@@ -29,8 +29,8 @@ module.exports.txBuilder = async (event) => {
   } catch(e) {
     console.error(e);
     return {
-      statusCode: 500,
-      body: JSON.stringify({ message: e.message }),
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Error',  error: e.message }),
     };
   }
 };
