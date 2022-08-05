@@ -1,12 +1,12 @@
-service: wallet-service
+service: your_service
 useDotenv: true
 
 custom:
   profiles:
-    dev: sigmavalley-api
-    prod: sigmavalley-api
+    dev: your_user
+    prod: your_user
   stage: ${opt:stage, 'offline'}
-  profile: sigmavalley-api
+  profile: your_user
   region: ${opt:region, 'us-east-1'}
 
   serverless-offline:
@@ -26,10 +26,10 @@ provider:
 
 functions:
   app:
-    handler: handler.handler
+    handler: handler.txBuilder
     events:
       - httpApi:
-          path: '/kaching-wallet'
+          path: '/build_tx'
           method: 'POST'
 
 package:
