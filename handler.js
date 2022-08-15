@@ -24,6 +24,10 @@ module.exports.txBuilder = async (event) => {
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'OK', unsignedTx: unsignedTx.toJSON() }),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      }
     };
 
   } catch(e) {
@@ -31,6 +35,10 @@ module.exports.txBuilder = async (event) => {
     return {
       statusCode: 400,
       body: JSON.stringify({ message: 'Error',  error: e.message }),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      }
     };
   }
 };
